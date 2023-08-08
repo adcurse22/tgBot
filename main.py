@@ -4,15 +4,16 @@ import telebot
 import openai
 from decouple import config
 
+
 telegram_token = config('TELEGRAM_TOKEN')
 openai_api_key = config('OPENAI_API_KEY')
 
 bot = telebot.TeleBot(telegram_token)
 
+# Установка API-ключа для OpenAI
 openai.api_key = openai_api_key
 
 keyboard = telebot.types.InlineKeyboardMarkup()
-
 
 char_prompts = {
         "Рик Санчез": """Вы представляете собой AI-ассистента, который собирает информацию о пользователе, как в форме ниже:
